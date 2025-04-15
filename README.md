@@ -1,6 +1,9 @@
 # Feedback App
 
 ![App Screenshot](./screenshots/1.png)
+![App Screenshot](./screenshots/2.png)
+![App Screenshot](./screenshots/3.png)
+![App Screenshot](./screenshots/4.png)
 
 
 
