@@ -409,3 +409,6 @@ frontend: 3000
 backend: 5001
 
 npm run dev 
+
+git pull origin main --rebase
+git push origin main
