@@ -1,0 +1,411 @@
+nodemon expressServer.js ******** TO Run Express  
+npm init **** for package.json
+npm install express --save (for package-lock.json It will automatically add express as dependency and create node_modules)
+npm install ejs --save
+npm install hbs --save
+npm install helmet --save
+npm install express-generator -g 
+express <myNewExpressSite> (Create a express project)
+npm install 
+nodemon (check in port 3000)
+npm install helmet --save
+nodemon
+If you want to create a seperate ejs project : cd.. -> express <ejsSite> --view=ejs
+
+
+touch .gitignore -> to create a .gitignore 
+
+curl -v localhost:3000 -> To check http header
+
+mkdir CineExpressPassport
+
+
+---------------------- DB Connect ------------------------------------------
+susmitade@Susmitas-MacBook-Air DBConnection % npm init
+susmitade@Susmitas-MacBook-Air DBConnection % npm install pg --save
+which psql -> /opt/homebrew/bin/psql
+brew install postgresql
+
+susmitade@Susmitas-MacBook-Air DBConnection % /opt/homebrew/bin/psql --version
+psql (PostgreSQL) 14.17 (Homebrew)
+
+brew services start postgresql ************
+
+psql postgres ************
+
+CREATE DATABASE cine_express;
+\l
+\c cine_express
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+
+\d users
+
+INSERT INTO users (name, email) VALUES ('Susmita', 'susmita@example.com');
+INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');
+
+SELECT * FROM users;
+
+\q  -> To get out of database 
+psql -U postgres -c "SHOW data_directory;"
+
+
+\du
+SHOW data_directory;
+
+\q
+nano /opt/homebrew/var/postgresql@14/pg_hba.conf
+
+npm install pg dotenv
+
+node server.js
+npm install dotenv
+
+Test with http://localhost:3000/test-db to check if database postgress is connected.
+
+Open another zsh terminal -> 
+psql -U susmitade -d cine_express
+
+\dt
+\d table_name
+\d users
+
+SQL Commands -> *******
+
+SELECT * FROM users;
+
+To insert a new user:
+Edit
+INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com');
+
+To update a user's email:
+Edit
+UPDATE users SET email = 'johndoe@example.com' WHERE name = 'John Doe';
+
+To delete a user:
+Edit
+DELETE FROM users WHERE name = 'Alice';
+
+Run the following command to quit PostgreSQL:
+\q
+
+Use the following command to reconnect to the database:
+psql -U susmitade -d postgres
+Check tables -> \l
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE
+);
+
+
+SELECT * FROM users;
+
+Run the following command in your project directory to remove node_modules:
+rm -rf node_modules
+
+To reinstall the dependencies later:
+Run:
+npm install
+
+
+Craete another table ******************************************
+brew services start postgresql ************
+psql postgres ************
+
+CREATE TABLE movies (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100),
+    release_year INT,
+    director VARCHAR(100)
+);
+
+INSERT INTO movies (title, release_year, director) VALUES 
+('The Shawshank Redemption', 1994, 'Frank Darabont'),
+('The Godfather', 1972, 'Francis Ford Coppola'),
+('The Dark Knight', 2008, 'Christopher Nolan');
+
+SELECT * FROM movies;
+
+Nopw connect to our Node/Express Server: 
+npm install dotenv
+node server.js
+
+open http://localhost:3000/test-db
+
+
+-------------------- Postgress Commands ---------------------
+
+PostgreSQL Commands:
+
+brew services start postgresql ************
+psql postgres ************
+
+Exit PostgreSQL session:
+\q
+
+Switch to a different database (e.g., users or postgres):
+\c users
+
+Create a new database (if it doesn't exist):
+
+CREATE DATABASE movies;
+Check if the database exists, and if so, drop it:
+DROP DATABASE IF EXISTS movies;
+
+Create the movies database:
+CREATE DATABASE movies;
+
+Switch to the new database:
+\c movies
+
+Create a new table in the movies database:
+CREATE TABLE movies (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255),
+  director VARCHAR(255),
+  release_year INT,
+  genre VARCHAR(100)
+);
+
+Insert some data into the movies table:
+INSERT INTO movies (title, director, release_year, genre) VALUES
+('Inception', 'Christopher Nolan', 2010, 'Sci-Fi'),
+('The Dark Knight', 'Christopher Nolan', 2008, 'Action'),
+('The Matrix', 'Wachowski Brothers', 1999, 'Sci-Fi');
+
+Select all rows from the movies table to view the data:
+SELECT * FROM movies;
+
+-------------------- CineExpress ---------------------------------------
+touch .gitignore
+express CineExpress --view=ejs
+npm install
+nodemon 
+rm -rf CineExpress (to delete a folder project)
+
+
+---------------------ShopExpress ----------------------------------------
+FrontEnd $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+mkdir shopExpress
+
+rm -rf shopExpress (to delete a folder)
+npx create-react-app frontend
+susmitade@Susmitas-MacBook-Air ShopExpress % cd frontend 
+susmitade@Susmitas-MacBook-Air frontend % npm start
+
+
+rafce -> command short for react  ******************
+
+nano .gitignore           # Open the .gitignore file using nano editor
+../../commands.txt
+git status --ignored # Verify that Git is ignoring the file
+rm -rf .git (to remove .git)
+
+
+git init 
+ls -a (to check initialized git repo)
+
+
+Command	                            #Usage
+git init	                          #Initializes a Git repository.
+git add .	                          #Stages all changes for commit.
+git commit -m "message"	            #Commits staged changes with a message.
+git remote add origin <repo_url>	  #Links the local repo to a GitHub repository.
+git branch -M main	                #Renames the branch to main (if needed).
+git pull --rebase origin main	      #Syncs the local branch with the remote one before pushing.
+git push -u origin main	            #Pushes the local branch to GitHub.
+
+
+npm start ********** TO Start the app 
+npm install react-booststrap bootstrap react-icons 
+npm install react-router-dom 
+npm install react-router-bootstrap
+npm install axios
+
+BackEnd $$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+npm init 
+Go to Root -> npm install express 
+lsof -i :5000 (to check which project is using port 5000)
+ kill -9 1044
+
+npm install -D nodemon concurrently ************* install concurrently and nodemon for dev server 
+
+
+npm run server ************** to run server.js on 5001 port 
+npm run client ************ to run frontend from root folder on port 3000.
+
+%%%%%%%%%%%%%%%%%
+npm run dev ************ To run both front/backend concurrently use $$$$$$$$$ MOST IMPORTANT
+
+
+Environment Variable $$$$$$$$$$$$$$$$$$
+
+From Root ->
+npm i dotenv 
+
+MongoDB Database Set UP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+database user: 
+username: desusmita001
+password: @Allthebest1
+
+MONGO_URI=mongodb+srv://desusmita001:Allthebest1@cluster0.ymwph.mongodb.net/shopexpress?retryWrites=true&w=majority&appName=Cluster0
+
+npm install mongoose
+npm install bcryptjs
+npm install colors
+
+To run seeder.js 
+npm run data:import # TO upload the data
+npm run data:destroy # TO destroy the data
+
+
+Now Lets run the application $$$$$$$$$$$$$
+npm run dev 
+
+Redux ToolKit ************
+npm i @reduxjs/toolkit react-redux 
+npm install @reduxjs/toolkit react-redux
+
+ // "react-dom": "^19.0.0",
+   // "react": "^19.0.0",
+
+
+cd frontend -> 
+Uninstall the current React and React DOM versions:
+npm uninstall react react-dom
+
+Install React 18 and React DOM 18:
+npm install react@18 react-dom@18
+
+After that, you can install @reduxjs/toolkit:
+npm install @reduxjs/toolkit react-redux
+npm install react@18.2.0 react-dom@18.2.0
+
+
+-------------------- Backend  Authentication sec - 7
+npm install jsonwebtoken
+
+check in JWT.io this cookie ->
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2UzMzUyOTU2ZmEwNGQxZGFmMzcyNTYiLCJpYXQiOjE3NDMyODU1MjAsImV4cCI6MTc3NDgyMTUyMH0.ar3OX29C5Nlt6uqoTl0kJxqPTeG-AKlcF-MBBoX4MEU; 
+
+npm install cookie-parser
+go to frontend and install -> npm i react-toastify
+
+go to frontend and install ->  npm i @paypal/react-paypal-js
+go to root -> npm i multer
+cd frontend -> npm i react-helmet-async
+
+
+-------------- Paypal Dummy account -------
+Login Info
+Sandbox URL
+https://sandbox.paypal.com
+
+Email
+sb-nczyg39540977@personal.example.com
+
+Password
+h2-pd!W4
+
+------------------- JEST /SELENIUM -----------------
+
+
+Terminal Commands
+Install jest and related dependencies:
+
+If you are using ES modules or TypeScript, you may need additional dependencies:
+
+Initialize a jest configuration file:
+
+Running Tests
+To run your tests, execute the following command:
+
+I also recommend installing the Jest extension to make tests easy to run in VS Code:
+
+
+Terminal Commands
+Install the necessary testing dependencies if not already installed:
+
+Run Tests
+To run your tests, execute:
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+npm install --save-dev jest
+npm install --save-dev babel-jest @babel/preset-env @babel/preset-react
+npx jest --init
+npm install --save-dev jest-environment-jsdom
+npm install --save-dev redux-mock-store
+npm test
+
+To run test from frontend *********
+
+susmitade@Susmitas-MacBook-Air ShopExpress % cd frontend
+susmitade@Susmitas-MacBook-Air frontend % npm install --save-dev jest
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install react-router-dom
+npm test
+
+
+npm install jest@29.7.0 @testing-library/react@16.3.0 @testing-library/jest-dom@6.6.3 --save-dev
+
+npm cache clean --force
+rm -rf node_modules
+npm install
+
+
+npm test
+
+
+-------------------  React Front To Back --------------------
+
+npx create-react-app feedback-app --use--npm
+
+susmitade@Susmitas-MacBook-Air feedback-app % npm list react
+feedback-app@0.1.0 /Users/susmitade/Documents/git/React_Front_To_Back/feedback-app
+├─┬ @testing-library/react@16.3.0
+│ └── react@19.1.0 deduped
+├─┬ react-dom@19.1.0
+│ └── react@19.1.0 deduped
+├─┬ react-scripts@5.0.1
+│ └── react@19.1.0 deduped
+└── react@19.1.0
+
+
+npm i react-icons
+npm start *******************
+npm i uuid
+npm i framer-motion
+
+npm install react@18.2.0 react-dom@18.2.0
+rm -rf node_modules package-lock.json
+npm install
+
+
+---------------- Deployment Feedback Form -------------
+
+
+npm run build
+npm i -g serve 
+serve -s build
+
+
+------------------- JSON Backend ------------------ 
+npm i json-server 
+
+npx json-server --watch db.json --port 5001
+
+npm run server 
+npm install concurrently
+
+"dev": "concurrently \"npm run server\" \"npm start\""
+frontend: 3000
+backend: 5001
+
+npm run dev 
